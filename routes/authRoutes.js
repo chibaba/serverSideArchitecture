@@ -6,12 +6,18 @@ passport.authenticate('google', {
 scope: ['profile', 'email']
 }))
 
-app.use('/auth/google/callback', passport.authenticate('google'))
+app.use(
+  '/auth/google/callback',
+   passport.authenticate('google'),
+   (req, res) => {
+     res.redirect('/surveys')
+   }
+  );
 
 
   app.use('/api/logout', (req, res) => {
     req.logout();
-    res.send(req.user)
+    res.redirect('/')
   });
 
 app.get('/api/current_user', (req, res) => {  
