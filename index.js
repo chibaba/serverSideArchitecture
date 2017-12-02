@@ -32,7 +32,7 @@ app.use(bodyParser.json())
    //if it dosent recognise the route
    const path = require('path');
    app.get('*', (req, res) => {
-     res.sendFile(path.resolve(_dirnanme, 'client', 'build', 'index.html'));
+     res.sendFile(path.resolve(__dirnanme, 'client', 'build', 'index.html'));
    })
  }
 
