@@ -23,6 +23,18 @@ app.use(bodyParser.json())
 
  require('./routes/authRoutes') (app);
  require('./routes/billingRoutes') (app);
+ if (process.env.NODE_ENV=== production) {
+   // Express will serve up production assets
+   //like our main.js file and main.css file
+   app.use(express.static('client/build'));
+
+   //Express will serve up the index.html file
+   //if it dosent recognise the route
+   const path = require('path');
+   app.get('*', (req, res) => {
+     res.sendFile(path.resolve(_dirnanme, 'client', 'build', 'index.html'));
+   })
+ }
 
 
 const PORT = process.env.PORT || 5000
