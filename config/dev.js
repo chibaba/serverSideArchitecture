@@ -6,5 +6,7 @@ module.exports = {
   mongoURI: 'mongodb://chibaba-dev:password@ds251245.mlab.com:51245/chibaba-dev',
   cookieKey: 'djjncsajnhbchuabhfcsahbchsachsgdgdg',
   stripePublishableKey: 'pk_test_05d9cCrYRN6LbYdF5GWKDG3F',
-  stripeSecretKey: 'sk_test_1aALNzi29WSPfk6N3C3BeeuW'
+  stripeSecretKey: 'sk_test_1aALNzi29WSPfk6N3C3BeeuW',
+  sendGridKey: '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',
+  redirectDomain: 'http://localhost:3000'
   };
