@@ -10,7 +10,7 @@ app.use(
   '/auth/google/callback',
    passport.authenticate('google'),
    (req, res) => {
-     res.redirect('/surveys')
+     res.redirect('/surveys'); 
    }
   );
 
